@@ -1,11 +1,12 @@
 public class FindTheKthCharacterInString {
+    public static final String WORD = "abbcbccdbccdcddebccdcddecddedeefbccdcddecddedeefcddedeefdeefeffgbccdcddecddedeefcddedeefdeefeffgcddedeefdeefeffgdeefeffgeffgfgghbccdcddecddedeefcddedeefdeefeffgcddedeefdeefeffgdeefeffgeffgfgghcddedeefdeefeffgdeefeffgeffgfgghdeefeffgeffgfggheffgfgghfgghghhibccdcddecddedeefcddedeefdeefeffgcddedeefdeefeffgdeefeffgeffgfgghcddedeefdeefeffgdeefeffgeffgfgghdeefeffgeffgfggheffgfgghfgghghhicddedeefdeefeffgdeefeffgeffgfgghdeefeffgeffgfggheffgfgghfgghghhideefeffgeffgfggheffgfgghfgghghhieffgfgghfgghghhifgghghhighhihiij";
     public static char kthCharacter(int k) {
-        StringBuilder word = new StringBuilder("a");
-
-        while (word.length() < k) {
-            word.append(next(word));
-        }
-        return word.charAt(k - 1);
+//        StringBuilder word = new StringBuilder("a");
+//
+//        while (word.length() < k) {
+//            word.append(next(word));
+//        }
+        return WORD.charAt(k - 1);
     }
 
     private static String next(StringBuilder word) {
@@ -17,6 +18,7 @@ public class FindTheKthCharacterInString {
     }
 
     public static void main(String[] args) {
-        System.out.println(kthCharacter(10));
+
+        System.out.println(kthCharacter(5));
     }
 }
