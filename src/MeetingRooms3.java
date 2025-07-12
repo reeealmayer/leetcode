@@ -10,7 +10,7 @@ public class MeetingRooms3 {
         for (int i = 0; i < n; i++) availableRooms.offer(i);
 
         PriorityQueue<long[]> busyRooms = new PriorityQueue<>(
-                Comparator.comparingLong(a -> a[0]) // [freeTime, roomIndex]
+                (a, b) -> a[0] != b[0] ? Long.compare(a[0], b[0]) : Integer.compare((int) a[1], (int) b[1])
         );
 
         int[] usageCount = new int[n];
