@@ -1,12 +1,11 @@
 public class ConvertBinaryNumberLinkedListToInteger {
     public static int getDecimalValue(ListNode head) {
-        StringBuilder tempo = new StringBuilder();
+        int result = 0;
         while (head != null) {
-            tempo.append(head.val);
+            result = (result << 1) | head.val;
             head = head.next;
         }
-
-        return Integer.parseInt(tempo.toString(), 2);
+        return result;
     }
 
     public static void main(String[] args) {
