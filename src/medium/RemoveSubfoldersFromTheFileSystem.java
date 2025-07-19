@@ -11,7 +11,7 @@ public class RemoveSubfoldersFromTheFileSystem {
 
         for (String path : folder) {
             // Если result пуст или текущий путь не под-папка последнего в result
-            if (result.isEmpty() || !path.startsWith(result.get(result.size() - 1) + "/")) {
+            if (result.isEmpty() || !path.startsWith(result.getLast() + "/")) {
                 result.add(path);
             }
         }
