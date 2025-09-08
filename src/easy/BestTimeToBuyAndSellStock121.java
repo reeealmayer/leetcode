@@ -1,7 +1,7 @@
 package easy;
 
 public class BestTimeToBuyAndSellStock121 {
-    public int maxProfit(int[] prices) {
+    public static int maxProfit(int[] prices) {
         int left = 0;
         int right = 1;
         int profit = 0;
@@ -16,5 +16,9 @@ public class BestTimeToBuyAndSellStock121 {
         }
 
         return profit;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(maxProfit(new int[]{7, 1, 5, 3, 6, 4}));
     }
 }
