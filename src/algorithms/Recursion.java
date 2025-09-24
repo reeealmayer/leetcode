@@ -18,6 +18,22 @@ public class Recursion {
         }
     }
 
+    public static int sum(int[] array, int n) {
+        if (n == 0) {
+            return 0;
+        }
+        return array[n - 1] + sum(array, n - 1);
+    }
+
+    public static int findMax(int[] array, int n) {
+        if (n == 0) {
+            return array[0];
+        }
+
+        int subMax = findMax(array, n - 1);
+        return Math.max(subMax, array[n - 1]);
+    }
+
     public static void main(String[] args) {
         countDown(10);
         System.out.println();
