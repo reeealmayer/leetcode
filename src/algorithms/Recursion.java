@@ -1,7 +1,5 @@
 package algorithms;
 
-import java.util.Arrays;
-
 public class Recursion {
 
     public static void countDown(int n) {
@@ -84,14 +82,80 @@ public class Recursion {
         arr[j] = temp;
     }
 
+    private static void printN(int n) {
+        System.out.print(n + " ");
+        if (n == 1) {
+            return;
+        }
+
+        printN(n - 1);
+    }
+
+    private static void printNModified(int a, int b) {
+        System.out.println(a);
+        if (a == b) {
+            return;
+        }
+        if (a < b) {
+            printNModified(a + 1, b);
+        } else {
+            printNModified(a - 1, b);
+        }
+    }
+
+    private static void isPowOfTwo(int n) {
+        if (n == 1) {
+            System.out.println("YES");
+            return;
+        }
+
+        if (n == 0 || n % 2 != 0) {
+            System.out.println("NO");
+            return;
+        }
+
+        isPowOfTwo(n / 2);
+    }
+
+    private static int sumOfDigits(int n) {
+        if (n < 10) {
+            return n;
+        }
+
+        return (n % 10) + sumOfDigits(n / 10);
+    }
+
+    private static void printDigitsInReversedOrder(int n) {
+        System.out.println(n % 10);
+        if (n < 10) {
+            return;
+        }
+
+        printDigitsInReversedOrder(n / 10);
+    }
+
+    private static void printDigitsInNaturalOrder(int n) {
+        if (n < 10) {
+            System.out.println(n);
+            return;
+        }
+        printDigitsInNaturalOrder(n / 10);
+        System.out.println(n % 10);
+    }
+
 
     public static void main(String[] args) {
-        countDown(10);
-        System.out.println();
-        System.out.println(factorial(5));
-
-        int[] nums = {10, 7, 8, 9, 1, 5};
-        quickSort(nums, 0, nums.length - 1);
-        System.out.println(Arrays.toString(nums));
+//        countDown(10);
+//        System.out.println();
+//        System.out.println(factorial(5));
+//
+//        int[] nums = {10, 7, 8, 9, 1, 5};
+//        quickSort(nums, 0, nums.length - 1);
+//        System.out.println(Arrays.toString(nums));
+//        printNModified(5, 1);
+//        isPowOfTwo(10);
+//        System.out.println(sumOfDigits(123));
+//        printDigitsInReversedOrder(1234);
+        printDigitsInNaturalOrder(123);
     }
 }
