@@ -1,5 +1,7 @@
 package proselyte_course.module_1_3.exceptions;
 
+import java.rmi.ServerError;
+
 public class MyException extends Exception {
     private int detail;
 
@@ -24,12 +26,57 @@ class ExceptionDemo {
         System.out.println("Нормальное завершение");
     }
 
-    public static void main(String[] args) {
+    static void returnExample() {
         try {
-            compute(1);
-            compute(20);
-        } catch (MyException e) {
-            System.out.println("Перехвачено исключение: " + e);
+//            throw new Exception();
+            System.out.println(2 + 2);
+            return;
+        } catch (Exception e) {
+            System.out.println("cached");
+            return;
+        } finally {
+            System.out.println("finally");
+        }
+    }
+
+    public static double sqr(double arg) {
+        long time = System.currentTimeMillis();
+
+        if (time % 2 == 0) {
+            return arg * arg;
+        } else if (time % 2 == 1) {
+            while(true);
+        } else {
+            throw new RuntimeException();
+        }
+    }
+
+    public static void main(String[] args) throws Exception {
+//        sqr(10);
+//        returnExample();
+//        try {
+//            compute(1);
+//            compute(20);
+//        } catch (MyException e) {
+//            System.out.println("Перехвачено исключение: " + e);
+//        }
+//        throw null;
+
+//        try {
+//            throw new MyException(2);
+//        } catch (Exception e) {
+//            if (e instanceof RuntimeException) {
+//                RuntimeException re = (RuntimeException) e;
+//                System.out.println("Это RuntimeException на самом деле");
+//            } else {
+//                System.err.println("В каком смысле не RuntimeException???");
+//            }
+//        }
+        try {
+            Throwable t = new Exception();
+//            throw t;
+        } catch (Exception e) {
+            System.out.println("Перехвачено");
         }
     }
 }
